@@ -18,6 +18,9 @@
   --paragraph: hsl(210, 9%, 31%);
   --brand-beige: hsl(39, 100%, 97%);
   --brand-light: hsl(148, 23%, 89%);
+
+  --bg-light: hsl(180, 14%, 97%);
+
   --nav-height: 7.2rem;
 }
 
@@ -34,6 +37,7 @@ body {
   text-align: center;
   /* sobrepoem, não conta a largura do scroll */
   overflow: overlay;
+  background-color: var(--bg-light);
 }
 
 /* EMBRULHANDO */
@@ -41,11 +45,15 @@ body {
 .wrapper {
   width: 37.5rem;
   margin-inline: auto;
-  scroll-padding-inline: 2.4rem;
+  padding-inline: 2.4rem;
 }
 
 ul {
   list-style: none;
+}
+
+section {
+  padding-block: 10rem;
 }
 
 /* HEADER */
@@ -196,9 +204,9 @@ body.menu-expanded>:not(nav) {
 }
 
 /*sem o menu-expanded*/
-.close-menu {
+/* .close-menu {
   display: none;
-}
+} */
 
 .menu,
 .close-menu,
@@ -286,4 +294,40 @@ body.menu-expanded .logo path {
 
 body.menu-expanded button path {
   stroke: white;
+}
+
+/* SERVICES CARDS */
+
+#services header h4 {
+  font-size: 1.4rem;
+  line-height: 150%;
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  margin-bottom: 1.6rem;
+}
+
+#services header h2 {
+  font-size: 3rem;
+  line-height: 3.9rem;
+  color: var(--headline);
+  margin-bottom: 6rem;
+}
+
+#services .cards {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem
+}
+
+#services .card {
+  padding: 2.4rem;
+  text-align: left;
+  background: white;
+  border: 1px solid var(--brand-light);
+  border-radius: .6rem;
+}
+
+#services .card h3 {
+  margin-block: 1.6rem;
 }

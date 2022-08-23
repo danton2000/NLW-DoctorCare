@@ -13,12 +13,12 @@ function onScroll() {
 function openMenu() {
     document.body.classList.add('menu-expanded')
     //mostrando o botao close do menu
-    close_menu_button.style.display = 'block'
+    // close_menu_button.style.display = 'block'
 }
 
 function closeMenu() {
     document.body.classList.remove('menu-expanded')
     //removendo o botao close do menu
-    close_menu_button.style.display = 'none'
+    // close_menu_button.style.display = 'none'
 }
 //1:58 = arrumar o botao de fechar
