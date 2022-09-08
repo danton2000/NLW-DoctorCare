@@ -22,3 +22,13 @@ function closeMenu() {
     // close_menu_button.style.display = 'none'
 }
 //1:58 = arrumar o botao de fechar
+ScrollReveal({
+    origin: 'top',
+    distance: '30px',
+    duration: 700,
+}).reveal(`
+    #home,
+    #home img,
+    #home .stats,
+    #services header,
+    #services .cards`)
