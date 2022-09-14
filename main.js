@@ -1,3 +1,10 @@
+//adicionando um evento direto na janela, funcão q recebe scroll
+//ouvinte
+window.addEventListener('scroll', onScroll)
+
+//quando carregar o arquivo executa o onScroll
+onScroll()
+
 // scroll é rolagem, ligar o scroll
 //DOM = é o nosso html modelo modelo como objeto para o javascript
 function onScroll() {
@@ -18,9 +25,9 @@ function showNavOnScroll() {
 }
 
 function showBackToTopButtonOnScroll() {
-    // 45:32
+    console.log(scrollY)
     // mostrar nav ao fazer scroll
-    if (scrollY > 400) {
+    if (scrollY > 550) {
         //Adicionando uma classe na tag navigation_bar
         backToTopButton.classList.add('show')
     } else {
