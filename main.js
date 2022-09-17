@@ -25,7 +25,7 @@ function showNavOnScroll() {
 }
 
 function showBackToTopButtonOnScroll() {
-    console.log(scrollY)
+    // console.log(scrollY)
     // mostrar nav ao fazer scroll
     if (scrollY > 550) {
         //Adicionando uma classe na tag navigation_bar
