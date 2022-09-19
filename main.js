@@ -9,18 +9,24 @@ onScroll()
 //DOM = é o nosso html modelo modelo como objeto para o javascript
 function onScroll() {
     // console.log('Scroll pagina')
-    //gerencia os scrolls da pagina
+    // gerencia os scrolls da pagina
     showNavOnScroll()
     showBackToTopButtonOnScroll()
     activateMenuattCurrentSection()
 }
 
-function activateMenuattCurrentSection(){
-    //ativar o menu na sessão do momento(atual)
-    //pegando o tamanho da view com js + a localizacao do scroll na tela, e dividindo por 2, para ter uma linha invisiel no meio daquela "sessao"
-    //linha alvo
-    const targetLine  = scrollY + innerHeight / 2
-    console.log(targetLine)
+function activateMenuattCurrentSection() {
+    // ativar o menu na sessão do momento(atual)
+    // pegando o tamanho da view com js + a localizacao do scroll na tela, e dividindo por 2, para ter uma linha invisiel no meio daquela "sessao"
+    // linha alvo
+    const targetLine = scrollY + innerHeight / 2
+    // console.log(targetLine)
+    // verificar se a sessao passou da linha
+    // quais dados vou precissar
+    //offsetTop qual é o top desse elemento
+    const sectionTop = home.offsetTop
+    // console.log(home.offsetTop)
+    // 01:53
 }
 
 function showNavOnScroll() {
