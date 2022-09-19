@@ -12,6 +12,15 @@ function onScroll() {
     //gerencia os scrolls da pagina
     showNavOnScroll()
     showBackToTopButtonOnScroll()
+    activateMenuattCurrentSection()
+}
+
+function activateMenuattCurrentSection(){
+    //ativar o menu na sessão do momento(atual)
+    //pegando o tamanho da view com js + a localizacao do scroll na tela, e dividindo por 2, para ter uma linha invisiel no meio daquela "sessao"
+    //linha alvo
+    const targetLine  = scrollY + innerHeight / 2
+    console.log(targetLine)
 }
 
 function showNavOnScroll() {
