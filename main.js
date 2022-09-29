@@ -13,10 +13,10 @@ function onScroll() {
     showNavOnScroll()
     showBackToTopButtonOnScroll()
     //passando o nome da sessao como parametro
-    //será que da pra mandar um for no .menu, pegando os links(nome)?
+    //será que da pra mandar um for no .menu, pegando os links(nome)? TEM ATÉ TEM, só que eu preciso enviar o obj que está no id da section, e não o texto do id
     activateMenuattCurrentSection(home)
     activateMenuattCurrentSection(services)
-    activateMenuattCurrentSection(about) 
+    activateMenuattCurrentSection(about)
     activateMenuattCurrentSection(contact)
 }
 
@@ -34,12 +34,15 @@ function activateMenuattCurrentSection(section) {
     //tamanho da sessao, Deslocamento de altura
     const sectionHeight = section.offsetHeight
     // console.log(sectionHeight)
-    
+
     //verificar se a parte do top(sectionTop) passou da linha imaginaria(targetLine)
     //o topo da sessão chegou ou passou da linha alvo
     const sectionTopReachOrPassedTargetLine = targetLine >= sectionTop
 
-    console.log("O topo da seção chegou ou passou da linhas ? ", sectionTopReachOrPassedTargetLine)
+    console.log(
+        'O topo da seção chegou ou passou da linhas ? ',
+        sectionTopReachOrPassedTargetLine
+    )
 
     //verificaar se a base está abaixo da linha alvo
     //quais dados vou precissar?
@@ -51,10 +54,14 @@ function activateMenuattCurrentSection(section) {
     // final da sessao passou da linha alvo
     const sectionEndPassedTargetLine = sectionEndAt <= targetLine
 
-    console.log("O fundo da seção passou da linhas ? ", !sectionEndPassedTargetLine)
-    
+    console.log(
+        'O fundo da seção passou da linhas ? ',
+        !sectionEndPassedTargetLine
+    )
+
     //limites da seção, top tem que ter passado, e o fundo não tem que ter passado
-    const sectionBoundaries = sectionTopReachOrPassedTargetLine && !sectionEndPassedTargetLine
+    const sectionBoundaries =
+        sectionTopReachOrPassedTargetLine && !sectionEndPassedTargetLine
 
     // console.log(sectionBoundaries)
 
@@ -66,7 +73,7 @@ function activateMenuattCurrentSection(section) {
 
     //começa removendo a class, se entrar no if ele add a classe
     menuElement.classList.remove('active')
-    if(sectionBoundaries){
+    if (sectionBoundaries) {
         menuElement.classList.add('active')
     }
 }
