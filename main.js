@@ -12,10 +12,15 @@ function onScroll() {
     // gerencia os scrolls da pagina
     showNavOnScroll()
     showBackToTopButtonOnScroll()
-    activateMenuattCurrentSection()
+    //passando o nome da sessao como parametro
+    //será que da pra mandar um for no .menu, pegando os links(nome)?
+    activateMenuattCurrentSection(home)
+    activateMenuattCurrentSection(services)
+    activateMenuattCurrentSection(about) 
+    activateMenuattCurrentSection(contact)
 }
 
-function activateMenuattCurrentSection() {
+function activateMenuattCurrentSection(section) {
     // ativar o menu na sessão do momento(atual)
     // pegando o tamanho da view com js + a localizacao do scroll na tela, e dividindo por 2, para ter uma linha invisiel no meio daquela "sessao"
     // linha alvo
@@ -24,9 +29,46 @@ function activateMenuattCurrentSection() {
     // verificar se a sessao passou da linha
     // quais dados vou precissar
     //offsetTop qual é o top desse elemento
-    const sectionTop = home.offsetTop
+    const sectionTop = section.offsetTop
     // console.log(home.offsetTop)
-    // 01:53
+    //tamanho da sessao, Deslocamento de altura
+    const sectionHeight = section.offsetHeight
+    // console.log(sectionHeight)
+    
+    //verificar se a parte do top(sectionTop) passou da linha imaginaria(targetLine)
+    //o topo da sessão chegou ou passou da linha alvo
+    const sectionTopReachOrPassedTargetLine = targetLine >= sectionTop
+
+    console.log("O topo da seção chegou ou passou da linhas ? ", sectionTopReachOrPassedTargetLine)
+
+    //verificaar se a base está abaixo da linha alvo
+    //quais dados vou precissar?
+    //sessao termina onde
+    //top da sessao + o tamanho dela é igual ao fim da sessao
+    const sectionEndAt = sectionTop + sectionHeight
+
+    // console.log(sectionEndAt)
+    // final da sessao passou da linha alvo
+    const sectionEndPassedTargetLine = sectionEndAt <= targetLine
+
+    console.log("O fundo da seção passou da linhas ? ", !sectionEndPassedTargetLine)
+    
+    //limites da seção, top tem que ter passado, e o fundo não tem que ter passado
+    const sectionBoundaries = sectionTopReachOrPassedTargetLine && !sectionEndPassedTargetLine
+
+    // console.log(sectionBoundaries)
+
+    //pesquisa pelo seletor menu(.menu a)
+    //getAtrribute = pegar o abributo que eu tenho na section, atributo id da section
+    const sectionId = section.getAttribute('id')
+
+    const menuElement = document.querySelector(`.menu a[href*=${sectionId}]`)
+
+    //começa removendo a class, se entrar no if ele add a classe
+    menuElement.classList.remove('active')
+    if(sectionBoundaries){
+        menuElement.classList.add('active')
+    }
 }
 
 function showNavOnScroll() {
