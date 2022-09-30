@@ -1,6 +1,6 @@
-# Projeto feito na semana NLW
+# Projeto feito na semana NLW - VERSÃO MANDO
 
-## Nome do projeto(Landing Page): DOCTOR CARE
+## Nome do projeto(Landing Page): MANDO
 
 
 ### Tecnologia Utilizdas:
@@ -15,8 +15,4 @@
 
 ```
     JavaScript
-```
-
-```
-    layout(https://www.figma.com/file/DNQRp1Zt9xkAccm0ryooeq/DoctorCare-(Community)?node-id=0%3A1)
 ```
