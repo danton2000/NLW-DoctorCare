@@ -86,6 +86,14 @@ section header h2 {
   color: var(--headline);
 }
 
+section header span {
+  color: var(--paragraph);
+  font-size: 1.6rem;
+  font-weight: 600;
+  display: block;
+  margin-top: 1rem;
+}
+
 section header h1 {
   font-size: 3.4rem;
   color: var(--headline);
@@ -754,14 +762,6 @@ footer .social-links {
 
   #contact h2 {
     width: 40.4rem;
-  }
-
-  #contact span {
-    color: var(--paragraph);
-    font-size: 1.6rem;
-    font-weight: 600;
-    display: block;
-    margin-top: 1rem;
   }
 
   /* FOOTER */
