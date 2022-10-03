@@ -48,6 +48,11 @@ body {
 }
 
 /* EMBRULHANDO */
+.logo{
+  width: 17rem;
+  height: 4rem;
+}
+
 
 .wrapper {
   /* width: 37.5rem; */
@@ -147,8 +152,9 @@ section .content p {
 }
 
 /* CUSTOM COLORS */
+/* PEGANDO PELA TAG G DO SVG */
 /* procuando o fill que contem esse fill */
-#navigation_bar .logo path[fill="#00856F"],
+#navigation_bar .logo g,
 #backToTopButton circle {
   fill: var(--primary-color);
 }
@@ -162,12 +168,17 @@ button.open-menu path[stroke*="#00856F"],
   stroke: var(--primary-color);
 }
 
-body.menu-expanded #navigation_bar .logo path {
+body.menu-expanded #navigation_bar .logo g {
   fill: white;
 }
 
 #navigation_bar.scroll button.open-menu path {
   stroke: white;
+}
+
+/* logo após o scroll */
+#navigation_bar.scroll .logo g {
+  fill: white;
 }
 
 /* NAVIGATION */
@@ -313,7 +324,7 @@ body.menu-expanded button {
   z-index: 100;
 }
 
-body.menu-expanded .logo path {
+body.menu-expanded .logo g {
   fill: white;
 }
 
@@ -466,12 +477,7 @@ footer .logo {
   margin-bottom: 2.4rem;
 }
 
-footer .logo svg {
-  width: 23.6rem;
-  height: 3.1rem;
-}
-
-footer .logo path {
+footer .logo g {
   fill: white;
 }
 
