@@ -16,6 +16,7 @@ function onScroll() {
     //será que da pra mandar um for no .menu, pegando os links(nome)? TEM ATÉ TEM, só que eu preciso enviar o obj que está no id da section, e não o texto do id
     activateMenuattCurrentSection(home)
     activateMenuattCurrentSection(services)
+    activateMenuattCurrentSection(testimonys)
     activateMenuattCurrentSection(about)
     activateMenuattCurrentSection(contact)
 }
@@ -121,5 +122,31 @@ ScrollReveal({
     #home .stats,
     #services header,
     #services .cards,
+    #testimonys header,
+    #testimonys .cards,
     #about header,
     #about content`)
+
+// Slider
+
+let $responsiveCarousel = document.querySelector(".js-carousel--responsive");
+ 
+new Glider($responsiveCarousel, {
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    draggable: true,
+    dots: ".js-carousel--responsive-dots",
+    arrows: {
+      prev: ".js-carousel--responsive-prev",
+      next: ".js-carousel--responsive-next",
+    },
+    responsive: [
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      }
+    ],
+  });

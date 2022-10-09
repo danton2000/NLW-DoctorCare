@@ -48,7 +48,7 @@ body {
 }
 
 /* EMBRULHANDO */
-.logo{
+.logo {
   width: 17rem;
   height: 4rem;
 }
@@ -149,6 +149,10 @@ section .content p {
   align-items: center;
   justify-content: center;
   gap: 3.2rem;
+}
+
+.glider-dot.active {
+  background: var(--primary-color) !important;
 }
 
 /* CUSTOM COLORS */
@@ -431,9 +435,11 @@ body.menu-expanded button path {
 }
 
 #testimonys .cards {
-  display: flex;
-  flex-direction: column;
-  gap: 3.2rem
+  width: 100%;
+}
+
+#testimonys svg path {
+  fill: var(--primary-color);
 }
 
 #testimonys .card {
@@ -448,19 +454,48 @@ body.menu-expanded button path {
   padding-block: 2rem;
 }
 
-#testimonys .client{
+#testimonys .client {
   display: flex;
   gap: 1.5rem;
+  align-items: center;
 }
 
-#testimonys .client img{
-  object-fit: contain;
+#testimonys .client img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 3rem;
 }
 
 #testimonys .card h3 {
   color: var(--headline);
-  margin-block: 1rem;
- 
+  margin-block: 2rem;
+}
+
+#testimonys .carousel-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  margin-top: 4rem;
+}
+
+#testimonys .carousel-bottom .js-carousel--responsive-dots {
+  margin: 0;
+  padding: 0;
+}
+
+#testimonys .button-slide {
+  gap: 2.4rem;
+}
+
+#testimonys .button-slide button {
+  background-color: var(--primary-color);
+  width: 4rem;
+  height: 4rem;
+  border-radius: .6rem;
+  cursor: pointer;
 }
 
 /* ABOUT */
@@ -783,23 +818,27 @@ footer .social-links {
     /* cartao cresce */
     flex-grow: 1;
   }
+
   /* TESTIMONYS */
+  #testimonys .wrapper {
+    display: block;
+  }
+
   #testimonys h2 {
     width: 80rem;
     margin-inline: auto;
   }
 
-  #testimonys .cards {
+  #testimonys .carousel-bottom {
+    display: flex;
     flex-direction: row;
-    /* tenta encaixar os carinhas ai, mas respeite o tamnho do .card(filho do cards) */
-    flex-wrap: wrap;
-    gap: 4rem;
+    align-items: center;
+    justify-content: space-between;
   }
 
-  #testimonys .card {
-    width: 40%;
-    /* cartao cresce */
-    flex-grow: 1;
+  #testimonys .carousel-bottom .js-carousel--responsive-dots {
+    margin: 0;
+    padding: 0;
   }
 
   /* ABOUT */
