@@ -829,6 +829,10 @@ footer .social-links {
     margin-inline: auto;
   }
 
+  #testimonys .glider-track{
+    gap: 2rem;
+  }
+
   #testimonys .carousel-bottom {
     display: flex;
     flex-direction: row;
